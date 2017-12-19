@@ -6,8 +6,8 @@ This module lets you practice:
   -- CALLING functions
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Jingwen Wu.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 import math
@@ -27,8 +27,8 @@ def main():
     #     4. When satisfied with your work, move onto the next test.
     # ------------------------------------------------------------------
 
-    run_test_generate_points_on_circle()
-    # run_test_draw_points_on_circle()
+    # run_test_generate_points_on_circle()
+    run_test_draw_points_on_circle()
     # run_test_pizza()
     # run_test_polygon()
     # run_test_fancy_polygon()
@@ -37,7 +37,7 @@ def main():
 def run_test_generate_points_on_circle():
     """ Tests the   generate_points_on_circle   function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # Done: 2. Implement this TEST function.
     #   It TESTS the  generate_points_on_circle  function defined below.
     #   Include at least ** 1 ** ADDITIONAL test (that YOU write).
     #
@@ -60,6 +60,20 @@ def run_test_generate_points_on_circle():
                 rg.Point(112.5, 28.3)]
     circle = rg.Circle(rg.Point(100, 50), 25)
     answer = generate_points_on_circle(circle, 6)
+
+    print('Expected:', expected)
+    print('Actual:  ', answer)
+
+    # ------------------------------------------------------------------
+    # Test 2:  (YOU write THIS test)
+    # ------------------------------------------------------------------
+    # Test 2:
+    expected = [rg.Point(125.0, 50.0),  # All numbers are approximate.
+                rg.Point(100.0, 125.0),
+                rg.Point(75.0, 100.0),
+                rg.Point(100.0, 75.0)]
+    circle = rg.Circle(rg.Point(100, 100), 25)
+    answer = generate_points_on_circle(circle, 4)
 
     print('Expected:', expected)
     print('Actual:  ', answer)
@@ -221,6 +235,8 @@ def draw_points_on_circle(window, circle, number_of_points, color):
     #
     # Your professor may do this exercise with you as "live coding".
     # ------------------------------------------------------------------
+    circle.attach_to(window)
+
 
 
 def run_test_pizza():
